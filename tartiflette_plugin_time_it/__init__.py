@@ -29,7 +29,7 @@ class TimeIt:
 
         prt = f"{next_resolver} (Field {field_name}) took {end - start} seconds to execute."
 
-        if directive_args["useLogger"]:
+        if directive_args["useLogger"] == "True":
             self._logger.debug(prt)
         else:
             print(prt)

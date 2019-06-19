@@ -22,7 +22,7 @@ async def test_timeit():
     engine = await create_engine(
         sdl="""
         type Ninja {
-            name: String @timeIt(userLogger: True)
+            name: String @timeIt(useLogger: True)
         }
 
         type Query {

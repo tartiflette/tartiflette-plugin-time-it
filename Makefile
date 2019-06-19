@@ -26,7 +26,7 @@ style: check-format check-import
 
 .PHONY: complexity
 complexity:
-	xenon --max-absolute B --max-modules B --max-average A tartiflette
+	xenon --max-absolute B --max-modules B --max-average A tartiflette_plugin_time_it
 
 .PHONY: test-unit
 test-unit: clean

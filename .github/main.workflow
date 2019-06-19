@@ -60,6 +60,6 @@ action "release" {
   needs = ["set version and changelog"]
   env = {
     USERNAME = "tartiflette"
-    REPOSITORY = "tartiflette"
+    REPOSITORY = "tartiflette-plugin-time-it"
   }
 }

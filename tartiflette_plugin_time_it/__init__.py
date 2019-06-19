@@ -4,7 +4,7 @@ from tartiflette import Directive, Scalar, Resolver
 
 
 _SDL = """
-directive @timeIt(useLogger: Boolean = True) on FIELD_DEFINITION | FIELD
+directive @timeIt(useLogger: Boolean! = true) on FIELD_DEFINITION | FIELD
 """
 
 
@@ -29,7 +29,7 @@ class TimeIt:
 
         prt = f"{next_resolver} (Field {field_name}) took {end - start} seconds to execute."
 
-        if directive_args["useLogger"] == "True":
+        if directive_args["useLogger"]:
             self._logger.debug(prt)
         else:
             print(prt)

@@ -5,25 +5,25 @@ workflow "build and release" {
 
 action "build docker image" {
   uses = "actions/docker/cli@master"
-  args = "build -t tartiflette ."
+  args = "build -t tartiflette_plugin_time_it ."
 }
 
 action "unit test" {
   needs = ["build docker image"]
   uses = "actions/docker/cli@master"
-  args = "run -i tartiflette make test-unit"
+  args = "run -i tartiflette_plugin_time_it make test-unit"
 }
 
 action "functional test" {
   needs = ["build docker image"]
   uses = "actions/docker/cli@master"
-  args = "run -i tartiflette make test-functional"
+  args = "run -i tartiflette_plugin_time_it make test-functional"
 }
 
 action "style" {
   needs = ["build docker image"]
   uses = "actions/docker/cli@master"
-  args = "run -i tartiflette make style"
+  args = "run -i tartiflette_plugin_time_it make style"
 }
 
 action "build and publish to pypi" {

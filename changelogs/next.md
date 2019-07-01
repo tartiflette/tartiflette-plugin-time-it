@@ -4,4 +4,6 @@
 
 ## Changed
 
+- Update dev dependancies
+
 ## Fixed

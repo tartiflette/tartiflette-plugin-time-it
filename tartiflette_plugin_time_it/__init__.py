@@ -1,7 +1,8 @@
 import logging
-from time import time
-from tartiflette import Directive, Scalar, Resolver
 
+from time import time
+
+from tartiflette import Directive, Resolver, Scalar
 
 _SDL = """
 directive @timeIt(useLogger: Boolean! = true) on FIELD_DEFINITION | FIELD

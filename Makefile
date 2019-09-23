@@ -8,11 +8,6 @@ PKG_VERSION := $(shell echo | awk -v pkg_version="$(PKG_VERSION)" -v build_numbe
 SET_ALPHA_VERSION = 1
 endif
 
-.PHONY: init
-init:
-	git submodule init
-	git submodule update
-
 .PHONY: format-import
 format-import:
 	isort -rc tartiflette_plugin_time_it/. tests/. setup.py
@@ -61,10 +56,6 @@ set-version:
 ifneq ($(SET_ALPHA_VERSION), 0)
 	bash -c "sed -i \"s@_VERSION[ ]*=[ ]*[\\\"\'][0-9]\+\\.[0-9]\+\\.[0-9]\+[\\\"\'].*@_VERSION = \\\"$(PKG_VERSION)\\\"@\" setup.py"
 endif
-
-.PHONY: run-docs
-run-docs:
-	docker-compose up docs
 
 .PHONY: get-version
 get-version:

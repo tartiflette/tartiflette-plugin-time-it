@@ -125,3 +125,33 @@ async def test_timeit_default():
     }
 
     assert logger.debug.called
+
+
+@pytest.mark.asyncio
+async def test_timeit_no_config():
+    @Resolver("Query.bob", schema_name="test_timeit_no_config")
+    async def bob_resolver(*_args, **_kwargs):
+        return {}
+
+    @Resolver("Ninja.name", schema_name="test_timeit_no_config")
+    async def bob_name_resolver(*_args, **_kwargs):
+        await asyncio.sleep(0.100)
+        return "OuiOui"
+
+    engine = await create_engine(
+        sdl="""
+        type Ninja {
+            name: String @timeIt
+        }
+
+        type Query {
+            bob: Ninja
+        }
+        """,
+        modules=["tartiflette_plugin_time_it"],
+        schema_name="test_timeit_no_config",
+    )
+
+    assert await engine.execute("query a { bob { name } } ") == {
+        "data": {"bob": {"name": "OuiOui"}}
+    }

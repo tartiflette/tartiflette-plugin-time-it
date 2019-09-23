@@ -8,5 +8,4 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 
-RUN make init
 RUN pip install -e .[test]

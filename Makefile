@@ -26,7 +26,7 @@ check-format:
 
 .PHONY: style
 style: check-format check-import
-	pylint tartiflette_plugin_time_it --rcfile=pylintrc
+	pylint tartiflette_plugin_time_it setup.py --rcfile=pylintrc
 
 .PHONY: complexity
 complexity:

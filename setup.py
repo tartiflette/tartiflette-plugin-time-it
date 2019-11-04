@@ -6,7 +6,7 @@ _TEST_REQUIRE = [
     "pytest-asyncio==0.10.0",
     "pylint==2.4.3",
     "xenon==0.7.0",
-    "black==19.3b0",
+    "black==19.10b0",
     "isort==4.3.21",
 ]
 

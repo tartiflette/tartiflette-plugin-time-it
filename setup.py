@@ -5,7 +5,7 @@ _TEST_REQUIRE = [
     "pytest-cov==2.8.1",
     "pytest-asyncio==0.10.0",
     "pylint==2.4.4",
-    "xenon==0.7.0",
+    "xenon==0.7.1",
     "black==19.10b0",
     "isort==4.3.21",
 ]

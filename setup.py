@@ -1,13 +1,13 @@
 from setuptools import find_packages, setup
 
 _TEST_REQUIRE = [
-    "pytest==5.3.5",
-    "pytest-cov==2.8.1",
-    "pytest-asyncio==0.10.0",
-    "pylint==2.4.4",
-    "xenon==0.7.0",
-    "black==19.10b0",
-    "isort==4.3.21",
+    "pytest==6.2.4",
+    "pytest-cov==2.12.1",
+    "pytest-asyncio==0.15.1",
+    "pylint==2.9.6",
+    "xenon==0.7.3",
+    "black==21.7b0",
+    "isort==5.9.3",
 ]
 
 _VERSION = "1.0.0"
